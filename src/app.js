@@ -17,10 +17,12 @@ app.use(morgan(morganOption));
 app.use(helmet());
 
 app.get('/', (req, res) => {
+    console.log("Getting to / endpoint");
     res.send('Hello world');
 });
 
 app.post('/email', jsonParser, (req, res) => {
+    console.log("Getting to /email endpoint");
     const { contact_name, email_from, email_body } = req.body;
 
     async function main() {
